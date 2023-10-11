@@ -1,4 +1,3 @@
-
 # build.yml
 
 name: Build Artifact
@@ -64,10 +63,7 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: my-artifact
-            path: ./my-artifact.tar.gz
+            path: web/my-artifact.tar.gz
 
-        - name: 'Downlaod Artifact'
-          uses: actions/download-artifact@v2
-          with:
-            name: my-artifact
-            path: ./my-artifact.tar.gz
+        - name: 'List Folders'
+          run: ls
