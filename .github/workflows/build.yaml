@@ -1,3 +1,4 @@
+
 # build.yml
 
 name: Build Artifact
@@ -51,16 +52,22 @@ jobs:
           run: npm install
       
         - name: 'Build Artifact'
-          run: npm build
+          run: npm run build
 
-        - name: 'Archive Artifact'
+        - name: 'List Folders'
+          run: ls
+
+        - name: 'Create TAR Archive'
+          run: tar czf my-artifact.tar.gz ./nimble-ice-0.0.1.tgz
+
+        - name: 'Upload Artifact'
           uses: actions/upload-artifact@v2
           with:
             name: my-artifact
-            path: ./web/dist
+            path: ./my-artifact.tar.gz
 
         - name: 'Downlaod Artifact'
           uses: actions/download-artifact@v2
           with:
             name: my-artifact
-            path: artifacts
+            path: ./my-artifact.tar.gz
