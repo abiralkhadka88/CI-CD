@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "lint": "npx standard --fix",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "build": "npm pack"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
