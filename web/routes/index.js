@@ -17,4 +17,12 @@ router.get('/ice-flakes', function (req, res, next) {
     })
 })
 
+router.get("/ice-cream", function (req, res, next) {
+  res.status(201).json({
+    resource: "ice-cream",
+    count: 2000,
+    shape: "cone",
+  });
+});
+
 module.exports = router
